@@ -5,10 +5,11 @@ import { deflateSync } from "zlib";
 import { Buffer } from "buffer";
 
 
-for (var ord = 1; ord < 100000; ord *= 10) {
-    const bloom = new BloomFilter(500000, 10);
+console.log("items,length,type");
+for (var ord = 1; ord < 1000000; ord *= 2) {
+    const bloom = new BloomFilter(7_188_794, 10);
     for (var k = 0; k < ord; k++) {
-        const randkey = stringRandom(20);
+        const randkey = stringRandom(100);
         bloom.add(randkey)
     }
     
@@ -19,5 +20,6 @@ for (var ord = 1; ord < 100000; ord *= 10) {
     const buf = Buffer.from(mpacked);
     const compressedBuf = deflateSync(buf);
 
-    console.log("JSON length of bloom filter with " + ord + " items: " + json.length + ", compressed: " + compressedBuf.byteLength);
+    console.log(ord + "," + json.length + ",uncompressed");
+    console.log(ord + "," + compressedBuf.byteLength + ",compressed")
 }
