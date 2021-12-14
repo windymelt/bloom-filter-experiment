@@ -1,0 +1,28 @@
+{
+  "name": "bloom-filter-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "main": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/windymelt/bloom-filter-experiment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windymelt/bloom-filter-experiment/issues"
+  },
+  "homepage": "https://github.com/windymelt/bloom-filter-experiment#readme",
+  "dependencies": {
+    "bloomfilter": "0.0.18",
+    "buffer": "^6.0.3",
+    "messagepack": "^1.1.12",
+    "string-random": "^0.1.3",
+    "zlib": "^1.0.5"
+  },
+  "type": "module"
+}
